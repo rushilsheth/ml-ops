@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-load-balancer-lab
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-backend
+  template:
+    metadata:
+      labels:
+        app: flask-backend
+    spec:
+      containers:
+      - name: flask-backend
+        image: rushilsheth/k8s_lab:1.0.0
+        ports:
+        - containerPort: 5001
