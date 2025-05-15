@@ -1,0 +1,11 @@
+apiVersion: v1  # Specifies the API version for the Service resource.
+kind: Service  # Declares that this resource is a Kubernetes Service.
+metadata:
+  name: k8s-load-balancer-lab-service  # The name of the Service, used to reference it within the cluster.
+spec:
+  type: ClusterIP  # The type of Service, which exposes the Service only within the cluster.
+  selector:
+    app: flask-backend  # Matches pods with the label "app: flask-backend" to route traffic to them.
+  ports:
+    - port: 5001  # The port on which the Service is exposed.
+      targetPort: 5001  # The port on the container to which traffic is forwarded.
