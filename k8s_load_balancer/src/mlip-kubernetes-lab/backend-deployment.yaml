@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: flask-backend
-        image: rushilsheth/k8s_lab:1.0.0
+        image: rushilsheth/full_lab:1.0.0
         ports:
         - containerPort: 5001
